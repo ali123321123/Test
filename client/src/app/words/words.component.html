@@ -1,0 +1,18 @@
+<div id="content">
+<h2>Words of the day</h2>
+<ul class="words">
+  <li *ngFor="let word of words">
+  <button type="button" (click)="onSelect(word) ">
+    <span class="wordDefention">{{word.wordDefention}}</span>
+  </button>
+</li>
+</ul>
+</div>
+<div *ngIf="selectedWord">
+  <h2>{{selectedWord.wordDefention| uppercase}} Details</h2>
+  <div>id: {{selectedWord.id}}</div>
+  <div>
+    <label for="word-name">Word: </label>
+    <input id="word-name" [(ngModel)]="selectedWord.wordDefention" placeholder="wordDefention">
+  </div>
+</div>
